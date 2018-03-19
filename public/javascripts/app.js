@@ -5,7 +5,6 @@ $(document).ready(function() {
   const poster = $('#poster');
   const plot = document.querySelector('#plot');
   const link = document.querySelector('#link');
-  link.style.display = 'none';
   const poster_link = document.querySelector('#poster_link');
 
   title_input.on('keyup', function(e) {
