@@ -21,11 +21,20 @@ app.get('/', (req, res) => {
 // The start function in package.json should be created manually by each user.
 app.get('/movie_info', (req, res) => {
   const title = req.query.title;
-  const api_key = process.env.API_KEY;
+  // const api_key = process.env.API_KEY;
+  const api_key = "af3c44de";
   axios.get(`http://omdbapi.com/?apikey=${api_key}&t=${title}`)
     .then ((response) => {
       const poster = response.data.Poster;
-      res.send({poster});
+      const plot = response.data.Plot;
+      const website = response.data.Website;
+
+      res.send({
+        poster,
+        plot,
+        website
+      });
+
     })
     .catch ((response) => {
       console.log(reponses);
